@@ -7,7 +7,7 @@ const apiList = {
     },
     LOGOUT: {
       method: "POST",
-      url: `${prefix}/auth/logout`,
+      url: `${prefix}/auth/logout-admin`,
     },
     UPDATE_PROFILE: {
       method: "PUT",
