@@ -56,7 +56,13 @@ const Sidebar = ({ width = 240, mobileOpen, setMobileOpen }) => {
           component={Link}
           to="/"
         >
-          <LogoIcon sx={{ width: "160px" }} />
+          {/* <LogoIcon sx={{ width: "160px" }} /> */}
+          <Typography
+            variant="subtitle2"
+            sx={{ fontWeight: 600, color: "text.secondary", mt: 0.5 }}
+          >
+            Activeedge physiotherapy and fitness
+          </Typography>
         </Stack>
 
         {isMobile && (
