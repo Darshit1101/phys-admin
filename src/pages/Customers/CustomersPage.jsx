@@ -6,6 +6,7 @@ import UsersTable from "./components/UsersTable";
 import { Stack, TextField } from "@mui/material";
 import { useCallback, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import useDebounce from "../../hooks/useDebounce";
 
 const CustomersPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -13,6 +14,7 @@ const CustomersPage = () => {
   const page = Number(searchParams.get("page") || 1);
   const limit = Number(searchParams.get("limit") || 10);
   const search = searchParams.get("search") || "";
+  const debouncedSearch = useDebounce(search, 500);
 
   const { data, loading, apiCall } = useApiCall({
     ...apiList.USERS.GET_ALL,
@@ -36,8 +38,8 @@ const CustomersPage = () => {
   );
 
   useEffect(() => {
-    apiCall({ params: { page, limit, search } });
-  }, [page, limit, search]);
+    apiCall({ params: { page, limit, search: debouncedSearch } });
+  }, [page, limit, debouncedSearch]);
 
   const handlePageChange = (_, newPage) => {
     updateQuery({ page: newPage });
