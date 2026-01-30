@@ -13,6 +13,7 @@ import AuthLayout from "./components/layouts/AuthLayout";
 import Layout from "./components/layouts/Layout";
 import NotFoundPage from "./pages/NotFound/NotFoundPage";
 import CustomersPage from "./pages/Customers/CustomersPage";
+import DebounceTest from "./pages/Test/DebounceTest";
 import { useAuth } from "./stores/useAuth";
 
 const LoggedInProtectedRoute = () => {
@@ -42,6 +43,7 @@ function App() {
               />
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="/customers" element={<CustomersPage />} />
+              <Route path="/debounce-test" element={<DebounceTest />} />
             </Route>
           </Route>
 
