@@ -22,6 +22,12 @@ const apiList = {
       url: `${prefix}/auth/reset-password`,
     },
   },
+  USERS:{
+    GET_ALL: {
+      method: "POST",
+      url: `${prefix}/user/getAllUsers`,
+    },
+  }
 };
 
 export default apiList;
