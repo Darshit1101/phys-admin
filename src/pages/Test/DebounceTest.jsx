@@ -8,7 +8,6 @@ const TestPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [users, setUsers] = useState([]);
 
-  // This is the magic! useDebounce waits 500ms after user stops typing
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
 
   useEffect(() => {
