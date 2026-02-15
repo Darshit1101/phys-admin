@@ -2,7 +2,7 @@ import {
   LayoutDashboard,
   Settings,
   Users,
-  Van,
+  CalendarCheck,
   WashingMachine,
 } from "lucide-react";
 
@@ -17,14 +17,14 @@ export const SIDEBAR_MENUS = [
     icon: Users,
     path: "/customers",
   },
-  {
-    title: "Settings",
-    icon: Settings,
-    path: "/settings",
-  },
+  // {
+  //   title: "Settings",
+  //   icon: Settings,
+  //   path: "/settings",
+  // },
   {
     title: "Data",
-    icon: Van,
+    icon: CalendarCheck,
     path: "/data",
   }
 ];

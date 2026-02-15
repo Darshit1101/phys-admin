@@ -6,6 +6,7 @@ import StatsCard from "./StatsCard";
 import useApiCall from "../../hooks/useApiCall";
 import apiList from "../../constants/apiList";
 import { People, CalendarMonth } from "@mui/icons-material";
+import { Users, CalendarCheck } from "lucide-react";
 
 const DashboardPage = () => {
   const { data, loading } = useApiCall(apiList.DASHBOARD.GET_STATS);
@@ -24,14 +25,14 @@ const DashboardPage = () => {
             {loading ? (
               <Skeleton variant="rectangular" height={120} sx={{ borderRadius: 1 }} />
             ) : (
-              <StatsCard title="Total Users" count={stats.userCount || 0} icon={<People />} />
+              <StatsCard title="Total Users" count={stats.userCount || 0} icon={<Users size={30} />} />
             )}
           </Grid>
           <Grid item xs={12} md={6}>
             {loading ? (
               <Skeleton variant="rectangular" height={120} sx={{ borderRadius: 1 }} />
             ) : (
-              <StatsCard title="Total Appointments" count={stats.appointmentCount || 0} icon={<CalendarMonth />} />
+              <StatsCard title="Total Appointments" count={stats.appointmentCount || 0} icon={<CalendarCheck size={30} />} />
             )}
           </Grid>
         </Grid>

@@ -3,7 +3,7 @@ import { Card, Typography, Box } from "@mui/material";
 const StatsCard = ({ title, count, icon }) => {
   return (
     <Card sx={{ p: 3, height: "100%" }}>
-      <Box display="flex" alignItems="center" justifyContent="space-between">
+      <Box display="flex" alignItems="center" justifyContent="space-between" gap={2}>
         <Box>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
             {title}
