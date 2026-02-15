@@ -27,7 +27,13 @@ const apiList = {
       method: "POST",
       url: `${prefix}/user/getAllUsers`,
     },
-  }
+  },
+  APPOINTMENTS: {
+    GET_ALL: {
+      method: "POST",
+      url: `${prefix}/appointment/getAllAppointments`,
+    },
+  },
 };
 
 export default apiList;

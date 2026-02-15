@@ -22,4 +22,9 @@ export const SIDEBAR_MENUS = [
     icon: Settings,
     path: "/settings",
   },
+  {
+    title: "Data",
+    icon: Van,
+    path: "/data",
+  }
 ];
