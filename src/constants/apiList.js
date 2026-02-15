@@ -34,6 +34,12 @@ const apiList = {
       url: `${prefix}/appointment/getAllAppointments`,
     },
   },
+  DASHBOARD: {
+    GET_STATS: {
+      method: "GET",
+      url: `${prefix}/dashboard/stats`,
+    },
+  },
 };
 
 export default apiList;

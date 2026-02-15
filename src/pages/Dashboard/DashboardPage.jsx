@@ -1,11 +1,43 @@
-import React from 'react'
+import React from "react";
+import CommonPageLayout from "../../components/layouts/CommonPageLayout";
+import PageHeader from "../../components/texts/PageHeader";
+import { Grid, Skeleton } from "@mui/material";
+import StatsCard from "../../components/global/Card/StatsCard";
+import useApiCall from "../../hooks/useApiCall";
+import apiList from "../../constants/apiList";
+import { People, CalendarMonth } from "@mui/icons-material";
 
 const DashboardPage = () => {
-  return (
-    <div>
-      Dashboard
-    </div>
-  )
-}
+  const { data, loading } = useApiCall(apiList.DASHBOARD.GET_STATS);
 
-export default DashboardPage
+  const stats = data?.data || {};
+
+  return (
+    <>
+      <CommonPageLayout>
+        <PageHeader
+          title="Dashboard"
+          subtitle="Welcome to the dashboard! Here you can find an overview of all the important metrics and insights related to your business. Stay updated with real-time data and make informed decisions to drive your success."
+        />
+        <Grid container spacing={2} sx={{ mt: 2 }}>
+          <Grid item xs={12} md={6}>
+            {loading ? (
+              <Skeleton variant="rectangular" height={120} sx={{ borderRadius: 1 }} />
+            ) : (
+              <StatsCard title="Total Users" count={stats.userCount || 0} icon={<People />} />
+            )}
+          </Grid>
+          <Grid item xs={12} md={6}>
+            {loading ? (
+              <Skeleton variant="rectangular" height={120} sx={{ borderRadius: 1 }} />
+            ) : (
+              <StatsCard title="Total Appointments" count={stats.appointmentCount || 0} icon={<CalendarMonth />} />
+            )}
+          </Grid>
+        </Grid>
+      </CommonPageLayout>
+    </>
+  );
+};
+
+export default DashboardPage;
