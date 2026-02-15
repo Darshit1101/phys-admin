@@ -2,7 +2,7 @@ import React from "react";
 import CommonPageLayout from "../../components/layouts/CommonPageLayout";
 import PageHeader from "../../components/texts/PageHeader";
 import { Grid, Skeleton } from "@mui/material";
-import StatsCard from "../../components/global/Card/StatsCard";
+import StatsCard from "./StatsCard";
 import useApiCall from "../../hooks/useApiCall";
 import apiList from "../../constants/apiList";
 import { People, CalendarMonth } from "@mui/icons-material";
