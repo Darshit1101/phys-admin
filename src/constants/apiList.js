@@ -33,6 +33,10 @@ const apiList = {
       method: "POST",
       url: `${prefix}/appointment/getAllAppointments`,
     },
+    GET_BY_ID: {
+      method: "GET",
+      url: `${prefix}/appointment/:id`,
+    },
   },
   DASHBOARD: {
     GET_STATS: {

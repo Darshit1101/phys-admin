@@ -1,14 +1,20 @@
 import DataTable from "../../../components/global/tables/DataTable";
 import { formatDate } from "../../../utils/formatDate";
 import { Box, Pagination, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const AppointmentsTable = ({ data, loading, handlePageChange }) => {
+  const navigate = useNavigate();
+
   const columns = [
     {
       id: "customId",
       label: "Appointment ID",
       render: (row) => (
-        <Typography sx={{ fontSize: "14px", color: "primary.main", fontWeight: 500 }}>
+        <Typography 
+          sx={{ fontSize: "14px", color: "primary.main", fontWeight: 500, cursor: "pointer" }}
+          onClick={() => navigate(`/data/${row._id}`)}
+        >
           {row?.customId}
         </Typography>
       ),

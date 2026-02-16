@@ -15,6 +15,7 @@ import NotFoundPage from "./pages/NotFound/NotFoundPage";
 import CustomersPage from "./pages/Customers/CustomersPage";
 import DebounceTest from "./pages/Test/DebounceTest";
 import DataPage from "./pages/DataPage/Main";
+import AppointmentDetailsPage from "./pages/AppointmentsDetails/AppointmentDetailsPage";
 import { useAuth } from "./stores/useAuth";
 
 const LoggedInProtectedRoute = () => {
@@ -46,6 +47,7 @@ function App() {
               <Route path="/customers" element={<CustomersPage />} />
               <Route path="/debounce-test" element={<DebounceTest />} />
               <Route path="/data" element={<DataPage />} />
+              <Route path="/data/:id" element={<AppointmentDetailsPage />} />
             </Route>
           </Route>
 
