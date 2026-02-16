@@ -4,7 +4,7 @@ import apiList from "../../constants/apiList";
 import useApiCall from "../../hooks/useApiCall";
 import UsersTable from "./components/UsersTable";
 import { Stack, TextField } from "@mui/material";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import useDebounce from "../../hooks/useDebounce";
 
