@@ -2,6 +2,7 @@ import DataTable from "../../../components/global/tables/DataTable";
 import { formatDate } from "../../../utils/formatDate";
 import { Box, Pagination, Typography } from "@mui/material";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const UsersTable = (props) => {
   const {
@@ -10,17 +11,21 @@ const UsersTable = (props) => {
     handlePageChange,
   } = props;
 
+  const navigate = useNavigate();
+
   const columns = [
     {
       id: "customId",
       label: "Custom Id",
       render: (row) => (
         <Typography
+          onClick={() => navigate(`/customers/${row?._id}`)}
           sx={{
             fontSize: "14px",
             textDecoration: "none",
             color: "primary.main",
             fontWeight: 500,
+            cursor: "pointer",
           }}
         >
           {row?.customId}

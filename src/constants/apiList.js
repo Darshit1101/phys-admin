@@ -27,6 +27,10 @@ const apiList = {
       method: "POST",
       url: `${prefix}/user/getAllUsers`,
     },
+    GET_BY_ID: {
+      method: "GET",
+      url: `${prefix}/user/:id`,
+    },
   },
   APPOINTMENTS: {
     GET_ALL: {

@@ -13,6 +13,7 @@ import AuthLayout from "./components/layouts/AuthLayout";
 import Layout from "./components/layouts/Layout";
 import NotFoundPage from "./pages/NotFound/NotFoundPage";
 import CustomersPage from "./pages/Customers/CustomersPage";
+import CustomerDetailsPage from "./pages/CustomerDetails/CustomerDetailsPage";
 import DebounceTest from "./pages/Test/DebounceTest";
 import DataPage from "./pages/DataPage/Main";
 import AppointmentDetailsPage from "./pages/AppointmentsDetails/AppointmentDetailsPage";
@@ -45,6 +46,7 @@ function App() {
               />
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="/customers" element={<CustomersPage />} />
+              <Route path="/customers/:userId" element={<CustomerDetailsPage />} />
               <Route path="/debounce-test" element={<DebounceTest />} />
               <Route path="/data" element={<DataPage />} />
               <Route path="/data/:id" element={<AppointmentDetailsPage />} />
